@@ -19,8 +19,7 @@ export default function Sidebar() {
   return (
     <nav className="bg-neutral-900 w-60 p-3 lg:flex flex-col hidden text-white fixed h-screen z-10">
       <div className="flex items-baseline gap-2 px-1 py-3">
-        <span className="font-bold text-5xl">WH</span>
-        <span className="font-bold text-xl font-mono px-1">PLATFORM</span>
+        <span className="font-bold text-5xl">Logistics Platform</span>
       </div>
       <div className="flex-1">
         {filteredLinks.map((item) => (
@@ -38,10 +37,11 @@ const SidebarLink = ({ item }) => {
     <Link
       to={item.path}
       className={ClassNames(
-        pathname === item.path ? "text-white font-semibold bg-neutral-700" : "text-neutral-300",
+        pathname === item.path
+          ? "text-white font-semibold bg-neutral-700"
+          : "text-neutral-300",
         linkCSS
-      )}
-    >
+      )}>
       <span className="text-xl">{item.icon}</span>
       {item.label}
     </Link>
